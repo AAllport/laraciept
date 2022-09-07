@@ -4,7 +4,9 @@ namespace App\Utils\LinePrint\Sections;
 
 use App\Utils\LinePrint\LinePrintSectionInterface;
 use App\Utils\LinePrintHelpers;
+use GdImage;
 use Mike42\Escpos\EscposImage;
+use Mike42\Escpos\GdEscposImage;
 use Mike42\Escpos\Printer;
 
 class ImageSection implements LinePrintSectionInterface
@@ -22,6 +24,18 @@ class ImageSection implements LinePrintSectionInterface
         $escPosImage = LinePrintHelpers::QrCodeToEscpos($content);
 
         return new ImageSection($escPosImage, $fnSettings);
+    }
+
+    public static function Url(string $src, bool $makeBig=false)
+    {
+        $image = imagecreatefromstring(file_get_contents($src));
+
+        imagescale($image, 500);
+
+        $epos = (new GdEscposImage());
+        $epos->readImageFromGdResource($image);
+
+        return new ImageSection($epos);
     }
 
     public function render(Printer $printer): void
