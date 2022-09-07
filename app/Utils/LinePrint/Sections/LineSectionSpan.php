@@ -2,7 +2,6 @@
 
 namespace App\Utils\LinePrint\Sections;
 
-use Mike42\Escpos\EscposImage;
 use Mike42\Escpos\Printer;
 
 class LineSectionSpan

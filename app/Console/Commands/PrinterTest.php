@@ -8,6 +8,7 @@ use App\Utils\LinePrint\Sections\LineSection;
 use App\Utils\LinePrint\Sections\LineSectionSpan;
 use App\Utils\LinePrint\Sections\SectionSettings;
 use App\Utils\LinePrint\Sections\TextSectionSettings;
+use Exception;
 use Illuminate\Console\Command;
 
 class PrinterTest extends Command
@@ -19,7 +20,7 @@ class PrinterTest extends Command
      * Execute the console command.
      *
      * @return int
-     * @throws \Exception
+     * @throws Exception
      */
     public function handle()
     {

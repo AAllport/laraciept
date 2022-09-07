@@ -23,10 +23,11 @@ class SpaceAwareBreaksTest extends TestCase
         $this->assertSame($expected, LinePrintHelpers::SpaceAwareBreaksPrefix($input, "[ ] - "));
     }
 
-    public function testItRespectsExistingBreaks(){
+    public function testItRespectsExistingBreaks()
+    {
         $input = "* [X] Setup Printer\n* [X] Connect printer to the network\n* [ ] Webhooks";
         $expected = "* [X] Setup Printer\n* [X] Connect printer to the network\n* [ ] Webhooks";
 
-        $this->assertSame($expected,LinePrintHelpers::SpaceAwareBreaks($input));
+        $this->assertSame($expected, LinePrintHelpers::SpaceAwareBreaks($input));
     }
 }

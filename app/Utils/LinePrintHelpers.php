@@ -7,8 +7,6 @@ use chillerlan\QRCode\QROptions;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Str;
 use Mike42\Escpos\GdEscposImage;
-use Termwind\Components\Li;
-use function Termwind\render;
 
 class LinePrintHelpers
 {
@@ -16,10 +14,10 @@ class LinePrintHelpers
 
     public static function SpaceAwareBreaks(string $input, int $maxLength = self::LINE_LENGTH): string
     {
-        if (str_contains($input,"\n")){
+        if (str_contains($input, "\n")) {
             return Str::of($input)
                 ->explode("\n")
-                ->each(fn($input)=>self::SpaceAwareBreaks($input,$maxLength))
+                ->each(fn($input) => self::SpaceAwareBreaks($input, $maxLength))
                 ->implode("\n");
         }
         return self::SpaceAwareBreaksPrefix($input, maxLength: $maxLength);
