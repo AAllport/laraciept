@@ -36,7 +36,7 @@ class LinePrint
         return new LinePrint();
     }
 
-    public function qrCode(string $content, callable|SectionSettings $fnSettings = null): static
+    public function qrCode(string $content, callable|SectionSettings $fnSettings = new SectionSettings()): static
     {
         $this->sections[] = ImageSection::QrCode($content, $fnSettings);
         return $this;

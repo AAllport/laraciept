@@ -17,7 +17,7 @@ class ImageSection implements LinePrintSectionInterface
         $this->settings = is_callable($fnSettings) ? $fnSettings(new SectionSettings()) : $fnSettings;
     }
 
-    public static function QrCode(string $content, callable $fnSettings = null): ImageSection
+    public static function QrCode(string $content, SectionSettings|callable $fnSettings = new SectionSettings()): ImageSection
     {
         $escPosImage = LinePrintHelpers::QrCodeToEscpos($content);
 
