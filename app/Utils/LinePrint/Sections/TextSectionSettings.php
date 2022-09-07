@@ -2,12 +2,10 @@
 
 namespace App\Utils\LinePrint\Sections;
 
-use Mike42\Escpos\EscposImage;
 use Mike42\Escpos\Printer;
 
-class LineSectionSettings extends LineSectionSpan
+class TextSectionSettings extends LineSectionSpan
 {
-
     const ALIGN_LEFT = Printer::JUSTIFY_LEFT;
     const ALIGN_CENTER = Printer::JUSTIFY_CENTER;
     const ALIGN_RIGHT = Printer::JUSTIFY_RIGHT;
@@ -17,9 +15,8 @@ class LineSectionSettings extends LineSectionSpan
 
     public static function make(string $text): LineSectionSpan
     {
-        return new LineSectionSettings($text);
+        return new TextSectionSettings($text);
     }
-
 
     /**
      * @phpstan-param self::ALIGN_* $alignment
@@ -31,7 +28,7 @@ class LineSectionSettings extends LineSectionSpan
         return $this;
     }
 
-    public function textSize(int $width = 1, int $height = 1):static
+    public function textSize(int $width = 1, int $height = 1): static
     {
         $this->textSizer = [$width, $height];
         return $this;
@@ -47,7 +44,7 @@ class LineSectionSettings extends LineSectionSpan
         $printer->feed();
 
         if ($this->alignment !== self::ALIGN_LEFT) $printer->setJustification(static::ALIGN_LEFT);
-        if ($this->textSizer !== [1, 1]) $printer->setTextSize(1,1);
+        if ($this->textSizer !== [1, 1]) $printer->setTextSize(1, 1);
 
     }
 }

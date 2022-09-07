@@ -2,24 +2,18 @@
 
 namespace App\Utils\LinePrint;
 
+use App\Utils\LinePrint\Sections\ImageSection;
 use App\Utils\LinePrint\Sections\LineSection;
-use App\Utils\LinePrint\Sections\LineSectionSettings;
 use App\Utils\LinePrint\Sections\LineSectionSpan;
+use App\Utils\LinePrint\Sections\SectionSettings;
+use App\Utils\LinePrint\Sections\TextSectionSettings;
 use App\Utils\LinePrintHelpers;
-use InvalidArgumentException;
 use Mike42\Escpos\Printer;
-use Spatie\LaravelIgnition\Exceptions\InvalidConfig;
-use Termwind\Components\Span;
 
 class LinePrint
 {
     /** @var array<string|LinePrintSectionInterface> */
     protected array $sections = [];
-
-    public static function make(): LinePrint
-    {
-        return new LinePrint();
-    }
 
     /**
      * @param string|callable(LineSection):LineSection $line
@@ -29,11 +23,22 @@ class LinePrint
     public function line(string|callable $line, callable $fnSettings = null): static
     {
         $effectiveLine = is_callable($line) ? $line(new LineSection()) : LinePrintHelpers::SpaceAwareBreaks($line);
-        if ($fnSettings){
-            $effectiveLine = $fnSettings(LineSectionSettings::make($effectiveLine));
+        if ($fnSettings) {
+            $effectiveLine = $fnSettings(TextSectionSettings::make($effectiveLine));
         }
 
         $this->sections[] = $effectiveLine;
+        return $this;
+    }
+
+    public static function make(): LinePrint
+    {
+        return new LinePrint();
+    }
+
+    public function qrCode(string $content, callable|SectionSettings $fnSettings = null): static
+    {
+        $this->sections[] = ImageSection::QrCode($content, $fnSettings);
         return $this;
     }
 
