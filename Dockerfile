@@ -82,8 +82,8 @@ ARG OCTANE_SERVER
 # Accepted values: app - horizon - scheduler
 ARG CONTAINER_MODE=app
 
-ARG APP_WITH_HORIZON=false
-ARG APP_WITH_SCHEDULER=false
+ARG APP_WITH_HORIZON=true
+ARG APP_WITH_SCHEDULER=true
 
 ENV DEBIAN_FRONTEND=noninteractive \
   TERM=xterm-color \
