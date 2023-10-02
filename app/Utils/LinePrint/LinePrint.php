@@ -22,7 +22,7 @@ class LinePrint
      * @param callable(LineSectionSpan):LineSectionSpan|null $fnSettings
      * @return $this
      */
-    public function line(string|callable $line, callable $fnSettings = null): static
+    public function line(string|callable $line ="", callable $fnSettings = null): static
     {
         $effectiveLine = is_callable($line) ? $line(new LineSection()) : LinePrintHelpers::SpaceAwareBreaks($line);
         if ($fnSettings) {
@@ -66,6 +66,6 @@ class LinePrint
 
     public function dispatch(): PendingDispatch
     {
-        return  PrintJob::dispatch($this);
+        return PrintJob::dispatch($this);
     }
 }

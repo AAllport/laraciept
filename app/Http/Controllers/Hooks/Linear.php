@@ -7,6 +7,7 @@ use App\Utils\LinePrint\Sections\SectionSettings;
 use App\Utils\LinePrint\Sections\TextSectionSettings;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 class Linear
 {
@@ -14,7 +15,10 @@ class Linear
     {
         $data = $request->input('data');
 
-        if (!collect($data)->pluck("labels.*.name")->map('strtolower')->contains("print")) {
+        Log::info("Linear hook", $data);
+
+        if (!in_array("Print", $request->input('data.labels.*.name'))) {
+            Log::debug("No print label found");
             abort(403, "No print label found");
         }
 
@@ -26,7 +30,7 @@ class Linear
                 ->align(TextSectionSettings::ALIGN_CENTER))
             ->line($data['title'], fn($s) => $s->textSize(2, 2))
             ->line("")
-            ->line($data['description'])
+            ->line($data['description'] ?? "")
             ->qrCode($request->input('url'), fn(SectionSettings $s) => $s->align(SectionSettings::ALIGN_CENTER))
             ->dispatch();
     }
