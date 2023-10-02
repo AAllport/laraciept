@@ -28,7 +28,7 @@ class HorizonServiceProvider extends HorizonApplicationServiceProvider
     protected function gate(): void
     {
         Gate::define('viewHorizon', function ($user) {
-            return request()->host() === 'laraciept.arcnet.lan';
+            return request()->httpHost() === 'laraciept.arcnet.lan';
         });
     }
 }
