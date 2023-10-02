@@ -2,12 +2,14 @@
 
 namespace App\Utils\LinePrint;
 
+use App\Jobs\PrintJob;
 use App\Utils\LinePrint\Sections\ImageSection;
 use App\Utils\LinePrint\Sections\LineSection;
 use App\Utils\LinePrint\Sections\LineSectionSpan;
 use App\Utils\LinePrint\Sections\SectionSettings;
 use App\Utils\LinePrint\Sections\TextSectionSettings;
 use App\Utils\LinePrintHelpers;
+use Illuminate\Foundation\Bus\PendingDispatch;
 use Mike42\Escpos\Printer;
 
 class LinePrint
@@ -60,5 +62,10 @@ class LinePrint
         }
 
         $printer->cut();
+    }
+
+    public function dispatch(): PendingDispatch
+    {
+        return  PrintJob::dispatch($this);
     }
 }
