@@ -31,4 +31,8 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
+    'linear'=>[
+        'key'=>env('LINEAR_KEY'),
+    ],
+
 ];

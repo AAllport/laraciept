@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use LinearApi\Client as LinearClient;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -13,7 +14,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->app->bind(LinearClient::class,fn($app)=> new LinearClient(config('services.linear.key')));
     }
 
     /**
