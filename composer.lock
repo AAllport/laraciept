@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "fa021548457dcf0c8611d4b4378e7df9",
+    "content-hash": "b5f254224e792bb938fdd218a7600d80",
     "packages": [
         {
             "name": "brick/math",
@@ -1211,16 +1211,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v9.52.15",
+            "version": "v9.52.16",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "e3350e87a52346af9cc655a3012d2175d2d05ad7"
+                "reference": "082345d76fc6a55b649572efe10b11b03e279d24"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/e3350e87a52346af9cc655a3012d2175d2d05ad7",
-                "reference": "e3350e87a52346af9cc655a3012d2175d2d05ad7",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/082345d76fc6a55b649572efe10b11b03e279d24",
+                "reference": "082345d76fc6a55b649572efe10b11b03e279d24",
                 "shasum": ""
             },
             "require": {
@@ -1405,7 +1405,7 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2023-08-08T14:28:40+00:00"
+            "time": "2023-10-03T13:02:30+00:00"
         },
         {
             "name": "laravel/horizon",
@@ -2362,53 +2362,6 @@
                 }
             ],
             "time": "2023-02-06T13:44:46+00:00"
-        },
-        {
-            "name": "mustafakucuk/php-linear-api",
-            "version": "v1.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/mustafakucuk/php-linear-api.git",
-                "reference": "cb2a545d32899be3c9ab948075239d6f905bea23"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/mustafakucuk/php-linear-api/zipball/cb2a545d32899be3c9ab948075239d6f905bea23",
-                "reference": "cb2a545d32899be3c9ab948075239d6f905bea23",
-                "shasum": ""
-            },
-            "require": {
-                "guzzlehttp/guzzle": "^7.4",
-                "xakepehok/array-graphql": "^0.0.1"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "LinearApi\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Mustafa KÜÇÜK",
-                    "email": "devmustafakucuk@gmail.com"
-                }
-            ],
-            "description": "A simple Object Oriented wrapper for Linear API, written with PHP.",
-            "homepage": "https://github.com/mustafakucuk/php-linear-api",
-            "keywords": [
-                "api",
-                "linear",
-                "php"
-            ],
-            "support": {
-                "issues": "https://github.com/mustafakucuk/php-linear-api/issues",
-                "source": "https://github.com/mustafakucuk/php-linear-api/tree/v1.0.0"
-            },
-            "time": "2022-06-06T21:36:05+00:00"
         },
         {
             "name": "nesbot/carbon",
@@ -6206,56 +6159,6 @@
                 "source": "https://github.com/webmozarts/assert/tree/1.11.0"
             },
             "time": "2022-06-03T18:03:27+00:00"
-        },
-        {
-            "name": "xakepehok/array-graphql",
-            "version": "0.0.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/XAKEPEHOK/array-graphql.git",
-                "reference": "818f207af73ef18b4f1aa575e0ecab60a6e9a270"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/XAKEPEHOK/array-graphql/zipball/818f207af73ef18b4f1aa575e0ecab60a6e9a270",
-                "reference": "818f207af73ef18b4f1aa575e0ecab60a6e9a270",
-                "shasum": ""
-            },
-            "require": {
-                "ext-json": "*",
-                "php": ">=7.1.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^7.5"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "XAKEPEHOK\\ArrayGraphQL\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Timur Kasumov aka XAKEPEHOK",
-                    "email": "icq-475204@ya.ru"
-                }
-            ],
-            "description": "This library can convert php arrays to GraphQL fields query",
-            "keywords": [
-                "array",
-                "field",
-                "graphql",
-                "query"
-            ],
-            "support": {
-                "issues": "https://github.com/XAKEPEHOK/array-graphql/issues",
-                "source": "https://github.com/XAKEPEHOK/array-graphql/tree/0.0.1"
-            },
-            "time": "2019-07-30T11:29:08+00:00"
         }
     ],
     "packages-dev": [
@@ -7178,16 +7081,16 @@
         },
         {
             "name": "phpstan/phpstan",
-            "version": "1.10.36",
+            "version": "1.10.37",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstan/phpstan.git",
-                "reference": "ffa3089511121a672e62969404e4fddc753f9b15"
+                "reference": "058ba07e92f744d4dcf6061ae75283d0c6456f2e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/ffa3089511121a672e62969404e4fddc753f9b15",
-                "reference": "ffa3089511121a672e62969404e4fddc753f9b15",
+                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/058ba07e92f744d4dcf6061ae75283d0c6456f2e",
+                "reference": "058ba07e92f744d4dcf6061ae75283d0c6456f2e",
                 "shasum": ""
             },
             "require": {
@@ -7236,7 +7139,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-09-29T14:07:45+00:00"
+            "time": "2023-10-02T16:18:37+00:00"
         },
         {
             "name": "phpunit/php-code-coverage",

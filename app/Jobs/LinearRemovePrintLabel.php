@@ -35,12 +35,12 @@ class LinearRemovePrintLabel implements ShouldQueue
     {
         Http::withHeaders([
             'Content-Type' => 'application/json',
-            "Authorization" => "Bearer " . config('services.linear.key'),
+            "Authorization" => config('services.linear.key'),
         ])->post(
             "https://api.linear.app/graphql",
             [
                 "query" => sprintf(
-                    "mutation IssueRemoveLabel{ issueRemoveLabel(id: %s, labelId: %s) { success } }",
+                    'mutation IssueRemoveLabel{ issueRemoveLabel(id: "%s", labelId: "%s") { success } }',
                     $this->issueId, Linear::LABEL_PRINT
                 ),
             ]);

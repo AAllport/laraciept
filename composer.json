@@ -17,8 +17,7 @@
         "laravel/octane": "^1.3",
         "laravel/sanctum": "^3.0",
         "laravel/tinker": "^2.7",
-        "mike42/escpos-php": "^4.0",
-        "mustafakucuk/php-linear-api": "*"
+        "mike42/escpos-php": "^4.0"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",
