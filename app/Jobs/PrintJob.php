@@ -9,7 +9,7 @@ use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\Middleware\WithoutOverlapping;
 use Illuminate\Queue\SerializesModels;
-use Mike42\Escpos\PrintConnectors\NetworkPrintConnector;
+use Mike42\Escpos\PrintConnectors\FilePrintConnector;
 use Mike42\Escpos\Printer;
 
 class PrintJob implements ShouldQueue
@@ -40,7 +40,7 @@ class PrintJob implements ShouldQueue
      */
     public function handle()
     {
-        $printer = new Printer(new NetworkPrintConnector("192.168.20.10"));
+        $printer = new Printer(new FilePrintConnector("/dev/usb/lp0"));
         $this->print->render($printer);
         $printer->close();
     }
